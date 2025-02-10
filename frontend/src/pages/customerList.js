@@ -11,8 +11,6 @@ const CustomerList = () => {
         const fetchCustomers = async () => {
             const response = await fetch('/api/customer');
             const json = await response.json();
-            console.log("json", json);
-
             if (response.ok){
                 setCustomers(json);
                 setFilteredCustomers(json);

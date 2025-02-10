@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
         const customers = await Customer.find({}).sort({createdAt: -1}); // Wait for the database query to complete
         res.status(200).json(customers); // Send the resolved data as JSON
     } catch (error) {
-        console.error(error);
         res.status(500).json({ error: error.message }); // Handle errors properly
     }
 });
@@ -31,7 +30,6 @@ router.get('/:id', async (req, res) => {
 
 //Post a new customer
 router.post('/', async (req, res) => {
-    console.log(req.body)
     const {name, icNumber, dateOfBirth, address, addressCountry, addressPostcode} = req.body
 
     try {

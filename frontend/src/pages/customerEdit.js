@@ -106,8 +106,6 @@ const CustomerEdit = () => {
         }
     };
 
-    console.log('errors', errors)
-
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Edit Customer</h3>
